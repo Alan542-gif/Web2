@@ -1,0 +1,26 @@
+.calculadora{
+    width: 300px;
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0A1828;
+}
+input[type ="button"]{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.fondo{
+    background-color: #96C2DB;
+}
+
+.inicio{
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+}
