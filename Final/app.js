@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const path = require('path');
+
 //Manejo de peticiones HTTP por medio de req
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -80,12 +82,12 @@ app.post('/add', (req, res) => {
     const { name, email } = req.body;
 
     /*
-        Nombre: Isaac
-        Correro: isaaccortes09@aragon.unam.mx
+        Nombre: Alan
+        Correro: alanayala423@aragon.unam-mx
         -->
 
-        Nombre: Isaac
-        Correro: isaaccortes09@aragon.unam.mx
+        Nombre: Alan
+        Correro: alanayala423@aragon.unam.mx
 
     */
 
@@ -137,3 +139,23 @@ db.query(query,[name,email,id],(err)=>{
     }
     })
 });
+
+//eliminar usuario
+
+app.get('/delete/:id', (req, res) => {
+    const {id} = req.params;
+    const eliminarUsuario = 'DELETE FROM users WHERE id = ?';
+    db.query(eliminarUsuario, [id], (err) => {
+        if(err){
+            console.log('Error al eliminar el usuario', err);
+            res.send('Error al eliminar el usuario');
+            
+        }else{
+            res.redirect('/');
+        }
+    })
+});
+
+// Archivos estáticos (CSS, imágenes, JS, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
+

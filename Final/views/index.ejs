@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="/estilos/estilos.css">
+    <link rel="icon" href="/estilos/img/logo-inicio.png" type="image/x-icon">
 </head>
-<body>
-<h1>Lista de usuario</h1>
+<body class="cuerpo">
+<h1 class="titulo">Lista de usuario</h1>
 <br><br>
-<table>
+<table class="tabla-usuarios">
     <tr>
         <th>Nombre</th>
         <th>Correo</th>
@@ -20,23 +22,23 @@
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td>
-                <a href="/edit/<%= user.id%>">Editar</a>
-                <a href="/delete/<%= user.id%>">Eliminar</a>
+                <a  class="enlace" href="/edit/<%= user.id%>">Editar</a>
+                <a class="enlace" href="/delete/<%= user.id%>">Eliminar</a>
             </td>
         </tr>
     <% }) %>
 </table>
+<br><br><br><br><br><br>
+<h2 class="titulo">Registro de usuario</h2>
 <br><br>
-<h2>Registro de usuario</h2>
-<br><br>
-<form action="/add" method="post">
-    <label for="name">Nombre: </label>
-    <input type="text" name="name" id="name" maxlength="45" required placeholder="Ingresa nombre">
+<form class="formulario" action="/add" method="post">
+    <label class="etiqueta" for="name">Nombre: </label>
+    <input class="entrada-texto" type="text" name="name" id="name" maxlength="45" required placeholder="Ingresa nombre">
     <br><br>
-    <label for="email">Correo: </label>
-    <input type="text" name="email" id="email" maxlength="45" required placeholder="Ingresa correo">
+    <label class="etiqueta" for="email">Correo: </label>
+    <input class="entrada-texto" type="text" name="email" id="email" maxlength="45" required placeholder="Ingresa correo">
     <br><br>
-    <button type="submit">Registro</button>
+    <button class="boton" type="submit">Registro</button>
 </form>
 </body>
 </html>
